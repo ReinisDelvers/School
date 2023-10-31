@@ -1,1 +1,1 @@
-# School1
+# School
