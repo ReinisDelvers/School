@@ -8,20 +8,58 @@
     
     <style>
       body {
-         background-image: url(https://www.nasa.gov/wp-content/uploads/2023/03/img1_0.png);
-         background-size: 100%;
+        background-image: url(https://www.nasa.gov/wp-content/uploads/2023/03/img1_0.png);
+        background-size: 100%;
       }
       .container {
         background-color: black;
         height: 100vh;
       }
     </style>
+
+    <style>
+      #tabulaSaraksts{
+        display: none;
+      }
+      #pogaRaditTabulaSaraksts{
+        display: block;
+      }
+      #pogaPasleptTabulaSaraksts{
+        display: none;
+      }
+      #mainitTabulaVaiSaraksts{
+        display: none;
+      }
+      #tabula{
+        display: block;
+      }
+      #saraksts{
+        display: block;
+      }
+    </style>
+    <script>
+      function raditTabulaSaraksts(){
+        document.getElementById("pogaPasleptTabulaSaraksts").style.display = "block";
+        document.getElementById("tabulaSaraksts").style.display = "block";
+        document.getElementById("pogaRaditTabulaSaraksts").style.display = "none";
+        document.getElementById("mainitTabulaVaiSaraksts").style.display = "block";
+      }
+      function mainitTabulaVaiSaraksts(){
+        dovument.getElementById("tabula").style.display = "none";
+      }
+      function pasleptTabulaSaraksts(){
+        document.getElementById("pogaRaditTabulaSaraksts").style.display = "block";
+        document.getElementById("tabulaSaraksts").style.display = "none";
+        document.getElementById("pogaPasleptTabulaSaraksts").style.display = "none";
+        document.getElementById("mainitTabulaVaiSaraksts").style.display = "none";
+      }
+    </script>
   </head>
 
   <body>
     <div class="container">
       <div class="row">
-        <!--br-->
+        <br>
       </div>
       <div class="row">
         <div class="col-12 col-xxl-3">
@@ -34,9 +72,11 @@
         </div>
       </div>
       <br>
-      <div class="row">
+      <button id="pogaRaditTabulaSaraksts" class="button" onclick="raditTabulaSaraksts()">Rādīt vairāk</button>
+      <button id="tabulaVAiSaraksts" class="button" onclick="mainitTabulaVaiSaraksts()">Mainīt saturu</button>
+      <div id="tabulaSaraksts" class="row">
         <div class="com-12 col-xxl-8">
-          <table class="table table-dark">
+          <table id="tabula" class="table table-dark">
             <tr>
               <th></th>
               <th>Hi</th>
@@ -54,7 +94,7 @@
             </tr>
           </table>
         </div>
-        <div class="col-12 col-xxl-4">
+        <div id="saraksts" class="col-12 col-xxl-4">
           <ol type="A"  style="color:white">
             <li>1</li>
             <li>
@@ -68,17 +108,7 @@
           </ol>
         </div>
       </div>
-      <div class="row">
-        <!--br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br-->
-      </div>
+      <button id="pogaPasleptTabulaSaraksts" class="button" onclick="pasleptTabulaSaraksts()">Rādīt mazāk</button>
     </div>
   </body>
 </html>
